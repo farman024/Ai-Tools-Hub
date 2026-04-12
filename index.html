@@ -3,464 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tools Hub - 139 Free AI Tools Directory</title>
-    <meta name="description" content="Discover 139+ free AI tools across 19 categories">
-    <link rel="icon" href="/icon.svg">
-    <link rel="manifest" href="/manifest.json">
+    <title>PWA Install Test</title>
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#667eea">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="AI Tools Hub">
-    <link rel="apple-touch-icon" href="/icon.svg">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
     <style>
-:root{--bg-page:#f9fafb;--bg-card:#fff;--bg-header:#fff;--bg-input:#fff;--text-primary:#111827;--text-secondary:#6b7280;--border-color:#e5e7eb;--gradient-start:#667eea;--gradient-end:#764ba2}
-[data-theme=dark]{--bg-page:#0f172a;--bg-card:#1e293b;--bg-header:#1e293b;--bg-input:#1e293b;--text-primary:#e2e8f0;--text-secondary:#94a3b8;--border-color:#334155}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;line-height:1.7;font-size:16px;background:var(--bg-page);color:var(--text-primary);transition:background .3s,color .3s}
-html{scroll-behavior:smooth}
-.header{position:sticky;top:0;z-index:1000;background:var(--bg-header);box-shadow:0 1px 3px rgba(0,0,0,.1);border-bottom:1px solid var(--border-color)}
-.header-container{max-width:1280px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.header-logo{display:flex;align-items:center;gap:12px}
-.header-emoji{font-size:40px;color:var(--gradient-start)}
-.header-emoji svg{width:40px;height:40px;stroke:currentColor}
-.header-title{font-size:28px;font-weight:700;background:linear-gradient(135deg,var(--gradient-start),var(--gradient-end));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.header-subtitle{font-size:14px;color:var(--text-secondary)}
-.theme-toggle{padding:8px;border-radius:8px;background:var(--border-color);border:none;cursor:pointer;font-size:24px;transition:all .3s}
-.theme-toggle svg{width:24px;height:24px;stroke:var(--text-primary)}
-.main{max-width:1280px;margin:0 auto;padding:20px}
-.stats{text-align:center;margin-bottom:24px}
-.stat-badge{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:linear-gradient(135deg,var(--gradient-start),var(--gradient-end));border-radius:50px;color:#fff;font-weight:600;font-size:18px;box-shadow:0 4px 12px rgba(102,126,234,.3)}
-.stat-badge svg{width:20px;height:20px;stroke:currentColor}
-.search-container{max-width:700px;margin:0 auto 24px}
-.search-wrapper{position:relative}
-.search-input{width:100%;padding:16px 50px 16px 20px;font-size:16px;border:2px solid var(--border-color);border-radius:16px;outline:0;background:var(--bg-input);color:var(--text-primary);transition:all .3s}
-.search-input:focus{border-color:var(--gradient-start);box-shadow:0 0 0 3px rgba(102,126,234,.1)}
-.search-icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:24px;pointer-events:none;color:var(--text-secondary)}
-.search-icon svg{width:24px;height:24px;stroke:currentColor}
-.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px}
-.filter-btn{display:flex;align-items:center;gap:6px;padding:10px 16px;border-radius:8px;border:2px solid var(--border-color);background:var(--bg-card);color:var(--text-primary);font-weight:500;cursor:pointer;transition:all .3s;font-size:14px}
-.filter-btn svg{width:16px;height:16px;stroke:currentColor}
-.filter-btn:hover{border-color:var(--gradient-start)}
-.filter-btn.active{background:linear-gradient(135deg,var(--gradient-start),var(--gradient-end));color:#fff;border-color:transparent}
-.category-section{margin-bottom:48px}
-.category-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--border-color)}
-.category-emoji{font-size:32px;color:var(--gradient-start)}
-.category-emoji svg{width:32px;height:32px;stroke:currentColor}
-.category-title{font-size:24px;font-weight:700}
-.category-count{font-size:16px;color:var(--text-secondary);font-weight:400}
-.tools-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:20px}
-@media (min-width:640px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:1024px){.tools-grid{grid-template-columns:repeat(3,1fr)}}
-@media (min-width:1280px){.tools-grid{grid-template-columns:repeat(4,1fr)}}
-.tool-card{background:var(--bg-card);border-radius:16px;padding:24px;border:2px solid var(--border-color);box-shadow:0 1px 3px rgba(0,0,0,.05);transition:all .3s}
-.tool-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.15);border-color:var(--gradient-start)}
-.card-header{display:flex;align-items:start;justify-content:space-between;margin-bottom:12px}
-.card-emoji{font-size:40px;color:var(--gradient-start)}
-.card-emoji svg{width:40px;height:40px;stroke:currentColor}
-.card-title{font-size:20px;font-weight:700;margin-bottom:8px}
-.card-title a{color:var(--text-primary);text-decoration:none;transition:color .3s}
-.card-title a:hover{color:var(--gradient-start)}
-.card-description{color:var(--text-secondary);font-size:15px;margin-bottom:16px;line-height:1.6}
-.card-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.badge{padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap}
-.badge-free{background:#10b981;color:#fff}
-.badge-freemium{background:#3b82f6;color:#fff}
-.badge-beta{background:#8b5cf6;color:#fff}
-.badge-new{background:#ef4444;color:#fff}
-.card-button{display:block;width:100%;text-align:center;padding:12px 16px;background:linear-gradient(135deg,var(--gradient-start),var(--gradient-end));color:#fff;font-weight:600;border-radius:12px;text-decoration:none;transition:all .3s}
-.card-button:hover{box-shadow:0 4px 12px rgba(102,126,234,.4);transform:translateY(-2px)}
-.no-results{display:none;text-align:center;padding:60px 20px;color:var(--text-secondary)}
-.no-results-emoji svg{width:64px;height:64px;stroke:currentColor;opacity:.3;margin:0 auto 16px}
-.no-results-title{font-size:24px;font-weight:700;margin-bottom:8px;color:var(--text-primary)}
-.back-to-top{position:fixed;bottom:32px;right:32px;padding:16px;background:linear-gradient(135deg,var(--gradient-start),var(--gradient-end));color:#fff;border-radius:50%;border:none;box-shadow:0 4px 12px rgba(102,126,234,.4);opacity:0;pointer-events:none;transition:all .3s;cursor:pointer;font-size:24px;width:56px;height:56px;display:flex;align-items:center;justify-content:center}
-.back-to-top.show{opacity:1;pointer-events:auto}
-.back-to-top:hover{transform:scale(1.1)}
-.footer{background:var(--bg-card);border-top:1px solid var(--border-color);margin-top:64px;padding:32px 20px}
-.footer-content{max-width:1280px;margin:0 auto;text-align:center;color:var(--text-secondary)}
-@media (max-width:640px){.header-title{font-size:24px}.category-title{font-size:20px}.stat-badge{font-size:16px}}
+        body{font-family:sans-serif;max-width:600px;margin:50px auto;padding:20px;background:#0f172a;color:#e2e8f0;}
+        h1{color:#667eea;}
+        .status{background:#1e293b;padding:15px;border-radius:8px;margin:10px 0;}
+        .success{color:#10b981;}
+        .error{color:#ef4444;}
     </style>
 </head>
 <body>
-<header class="header">
-    <div class="header-container">
-        <div class="header-logo">
-            <div class="header-emoji"><i data-lucide="bot"></i></div>
-            <div>
-                <h1 class="header-title">AI Tools Hub</h1>
-                <p class="header-subtitle">Free AI Tools Directory</p>
-            </div>
-        </div>
-        <button id="themeToggle" class="theme-toggle"><i data-lucide="moon" id="themeIcon"></i></button>
-    </div>
-</header>
-<main class="main">
-    <div class="stats">
-        <div class="stat-badge"><i data-lucide="sparkles"></i><span id="toolCount">139</span><span>Free AI Tools</span></div>
-    </div>
-    <div class="search-container">
-        <div class="search-wrapper">
-            <input type="text" id="searchInput" class="search-input" placeholder="Search tools...">
-            <span class="search-icon"><i data-lucide="search"></i></span>
-        </div>
-    </div>
-    <div class="filters">
-        <button class="filter-btn active" data-category="all">All Tools</button>
-        <button class="filter-btn" data-category="free-forever"><i data-lucide="gem"></i> Free Forever</button>
-    </div>
-    <section id="recentlyAdded" class="category-section" style="display:none">
-        <div class="category-header">
-            <span class="category-emoji"><i data-lucide="star"></i></span>
-            <h2 class="category-title">Recently Added</h2>
-        </div>
-        <div id="recentGrid" class="tools-grid"></div>
-    </section>
-    <div id="categoriesContainer"></div>
-    <div id="noResults" class="no-results">
-        <div class="no-results-emoji"><i data-lucide="search"></i></div>
-        <h3 class="no-results-title">No tools found</h3>
-        <p class="no-results-text">Try a different search</p>
-    </div>
-    <button id="backToTop" class="back-to-top"><i data-lucide="arrow-up"></i></button>
-</main>
-<footer class="footer">
-    <div class="footer-content">
-        <p>AI Tools Hub © 2026 | 139 Free AI Tools | Updated April 2026</p>
-    </div>
-</footer>
-<script>
-const iconMap={
-"Conversational AI":"message-circle",
-"AI Automation":"bot",
-"AI Browsers":"globe",
-"AI Project Management":"clipboard-list",
-"AI Resume & Career":"briefcase",
-"AI Security & Privacy":"shield",
-"Coding & Development":"code",
-"Design & Creativity":"palette",
-"Image & Video":"image",
-"Music Generation":"music",
-"No-Code Builders":"blocks",
-"Open-Source Models":"package",
-"Productivity & Business":"trending-up",
-"Research & Analysis":"microscope",
-"SEO & Marketing":"megaphone",
-"Translation & Language":"languages",
-"Utilities":"wrench",
-"Voice & Audio":"mic",
-"Writing & Content":"pen-tool"
-};
-
-const tools=[
-{name:"Character.AI",url:"https://character.ai",description:"Create and chat with AI characters",category:"Conversational AI",tags:["Free Tier"]},
-{name:"ChatGPT",url:"https://chat.openai.com",description:"Conversational AI assistant",category:"Conversational AI",tags:["Free Tier"]},
-{name:"Claude",url:"https://claude.ai",description:"AI assistant by Anthropic",category:"Conversational AI",tags:["Free Tier"]},
-{name:"DeepSeek",url:"https://chat.deepseek.com",description:"Free AI with deep thinking",category:"Conversational AI",tags:["Free Forever"]},
-{name:"getmulti.ai",url:"https://getmulti.ai",description:"300+ AI models",category:"Conversational AI",tags:["Free Tier"]},
-{name:"Google Gemini",url:"https://gemini.google.com",description:"Google's multimodal AI",category:"Conversational AI",tags:["Free Tier"]},
-{name:"Google AI Studio",url:"https://aistudio.google.com",description:"AI experiments platform",category:"Conversational AI",tags:["Free Tier"]},
-{name:"Grok",url:"https://grok.x.ai",description:"Real-time AI",category:"Conversational AI",tags:["Free Tier"]},
-{name:"Groq",url:"https://groq.com",description:"Fast AI inference",category:"Conversational AI",tags:["Free Forever"]},
-{name:"HuggingChat",url:"https://huggingface.co/chat",description:"Open-source AI chat",category:"Conversational AI",tags:["Free Forever"]},
-{name:"Meta AI",url:"https://www.meta.ai",description:"AI by Meta",category:"Conversational AI",tags:["Free Forever"]},
-{name:"Microsoft Copilot",url:"https://copilot.microsoft.com",description:"AI in Windows & Edge",category:"Conversational AI",tags:["Free Tier"]},
-{name:"Minimax Claw",url:"https://minimax.chat",description:"Advanced reasoning AI",category:"Conversational AI",tags:["Free Tier"],new:true},
-{name:"Mistral AI",url:"https://chat.mistral.ai",description:"European AI model",category:"Conversational AI",tags:["Free Tier"]},
-{name:"Ollama",url:"https://ollama.ai",description:"Run LLMs locally",category:"Conversational AI",tags:["Free Forever"]},
-{name:"Pi AI",url:"https://pi.ai",description:"Empathetic AI",category:"Conversational AI",tags:["Free Forever"],new:true},
-{name:"Poe",url:"https://poe.com",description:"Multiple AI models",category:"Conversational AI",tags:["Free Tier"]},
-{name:"Qwen AI",url:"https://qwen.ai",description:"Alibaba's LLM",category:"Conversational AI",tags:["Free Forever"],new:true},
-{name:"ThunAI",url:"https://thunai.com",description:"Advanced reasoning",category:"Conversational AI",tags:["Free Tier"],new:true},
-{name:"You.com",url:"https://you.com",description:"AI search engine",category:"Conversational AI",tags:["Free Tier"]},
-{name:"Dia Browser",url:"https://www.diabrowser.com",description:"AI-first browser",category:"AI Browsers",tags:["Free Tier","Beta"],new:true},
-{name:"Artbreeder",url:"https://www.artbreeder.com",description:"AI image blending",category:"Image & Video",tags:["Free Tier"]},
-{name:"Bing Image Creator",url:"https://www.bing.com/images/create",description:"DALL-E generator",category:"Image & Video",tags:["Free Tier"]},
-{name:"CapCut",url:"https://www.capcut.com",description:"Video creation with AI",category:"Image & Video",tags:["Free Forever"]},
-{name:"Clipdrop",url:"https://clipdrop.co",description:"Background removal",category:"Image & Video",tags:["Free Tier"]},
-{name:"Craiyon",url:"https://www.craiyon.com",description:"Free image generator",category:"Image & Video",tags:["Free Forever"]},
-{name:"DeepAI",url:"https://deepai.org/machine-learning-model/text2img",description:"Text-to-image",category:"Image & Video",tags:["Free Tier"]},
-{name:"Gogiberry",url:"https://gogiberry.com",description:"AI art styles",category:"Image & Video",tags:["Free Tier"],new:true},
-{name:"Ideogram",url:"https://ideogram.ai",description:"Best text rendering",category:"Image & Video",tags:["Free Tier"]},
-{name:"Leonardo.AI",url:"https://leonardo.ai",description:"AI art generation",category:"Image & Video",tags:["Free Tier"]},
-{name:"NightCafe",url:"https://nightcafe.studio",description:"AI art with credits",category:"Image & Video",tags:["Free Tier"]},
-{name:"OpusClip",url:"https://www.opus.pro",description:"Video clipper",category:"Image & Video",tags:["Free Tier"]},
-{name:"Pixlr",url:"https://pixlr.com/ai",description:"AI photo editing",category:"Image & Video",tags:["Free Tier"]},
-{name:"Playground AI",url:"https://playgroundai.com",description:"AI image creation",category:"Image & Video",tags:["Free Tier"]},
-{name:"Remove.bg",url:"https://remove.bg",description:"Background removal",category:"Image & Video",tags:["Free Tier"]},
-{name:"Runway Gen-2",url:"https://runwayml.com",description:"AI video generation",category:"Image & Video",tags:["Free Tier"]},
-{name:"Stable Diffusion",url:"https://stablediffusionweb.com",description:"Open-source image AI",category:"Image & Video",tags:["Free Forever"]},
-{name:"Vozo Visual Translate",url:"https://vozo.ai",description:"Video dubbing",category:"Image & Video",tags:["Free Tier"],new:true},
-{name:"Suno AI",url:"https://suno.ai",description:"AI music composition",category:"Music Generation",tags:["Free Tier"]},
-{name:"Udio",url:"https://udio.com",description:"AI music generator",category:"Music Generation",tags:["Free Tier"]},
-{name:"15.ai",url:"https://15.ai",description:"AI voice generation",category:"Voice & Audio",tags:["Free Forever"]},
-{name:"Adobe Podcast AI",url:"https://podcast.adobe.com",description:"Audio enhancement",category:"Voice & Audio",tags:["Free Tier"]},
-{name:"Audacity",url:"https://www.audacityteam.org",description:"Audio editor with AI",category:"Voice & Audio",tags:["Free Forever"]},
-{name:"Bark by Suno",url:"https://github.com/suno-ai/bark",description:"Text-to-audio",category:"Voice & Audio",tags:["Free Forever"]},
-{name:"Coqui TTS",url:"https://github.com/coqui-ai/TTS",description:"Text-to-speech",category:"Voice & Audio",tags:["Free Forever"]},
-{name:"ElevenLabs",url:"https://elevenlabs.io",description:"High-quality AI voice",category:"Voice & Audio",tags:["Free Tier"]},
-{name:"FakeYou",url:"https://fakeyou.com",description:"Celebrity voices",category:"Voice & Audio",tags:["Free Tier"]},
-{name:"Krisp",url:"https://krisp.ai",description:"Noise cancellation",category:"Voice & Audio",tags:["Free Tier"]},
-{name:"Otter.ai",url:"https://otter.ai",description:"Meeting notes",category:"Voice & Audio",tags:["Free Tier"]},
-{name:"Speechify",url:"https://speechify.com",description:"Text-to-speech",category:"Voice & Audio",tags:["Free Tier"]},
-{name:"TTSMaker",url:"https://ttsmaker.com",description:"Free TTS",category:"Voice & Audio",tags:["Free Forever"]},
-{name:"Whisper by OpenAI",url:"https://github.com/openai/whisper",description:"Speech recognition",category:"Voice & Audio",tags:["Free Forever"]},
-{name:"Wispr Flow",url:"https://whisperflow.ai",description:"Audio transcription",category:"Voice & Audio",tags:["Free Tier"]},
-{name:"Blackbox AI",url:"https://www.useblackbox.io",description:"Code generation",category:"Coding & Development",tags:["Free Tier"]},
-{name:"Codeium",url:"https://codeium.com",description:"Free code completion",category:"Coding & Development",tags:["Free Forever"]},
-{name:"CodePal",url:"https://codepal.ai",description:"Code generator",category:"Coding & Development",tags:["Free Tier"]},
-{name:"Continue",url:"https://github.com/continuedev/continue",description:"AI for VS Code",category:"Coding & Development",tags:["Free Forever"]},
-{name:"GitHub Copilot",url:"https://github.com/features/copilot",description:"Free for students",category:"Coding & Development",tags:["Free Tier"]},
-{name:"Kodo",url:"https://kodo.ai",description:"AI code review",category:"Coding & Development",tags:["Free Tier"],new:true},
-{name:"Phind",url:"https://www.phind.com",description:"AI search for devs",category:"Coding & Development",tags:["Free Tier"]},
-{name:"Pieces",url:"https://pieces.app",description:"Code snippet manager",category:"Coding & Development",tags:["Free Tier"]},
-{name:"Replit",url:"https://replit.com",description:"Online IDE with AI",category:"Coding & Development",tags:["Free Tier"]},
-{name:"Tabnine",url:"https://www.tabnine.com",description:"Code completion",category:"Coding & Development",tags:["Free Tier"]},
-{name:"v0 by Vercel",url:"https://v0.dev",description:"AI UI generator",category:"Coding & Development",tags:["Free Tier"]},
-{name:"Copy.ai",url:"https://www.copy.ai",description:"AI copywriting",category:"Writing & Content",tags:["Free Tier"]},
-{name:"Grammarly",url:"https://www.grammarly.com",description:"Grammar checks",category:"Writing & Content",tags:["Free Tier"]},
-{name:"Hemingway Editor",url:"https://hemingwayapp.com",description:"Readability checker",category:"Writing & Content",tags:["Free Forever"]},
-{name:"Jenni.ai",url:"https://jenni.ai",description:"AI for students",category:"Writing & Content",tags:["Free Tier"]},
-{name:"LanguageTool",url:"https://languagetool.org",description:"Grammar checker",category:"Writing & Content",tags:["Free Tier"]},
-{name:"Lex",url:"https://lex.page",description:"AI writing tool",category:"Writing & Content",tags:["Free Tier"]},
-{name:"QuillBot",url:"https://quillbot.com",description:"Paraphrasing",category:"Writing & Content",tags:["Free Tier"]},
-{name:"Rytr",url:"https://rytr.me",description:"AI writing assistant",category:"Writing & Content",tags:["Free Tier"]},
-{name:"Wordtune",url:"https://www.wordtune.com",description:"Writing companion",category:"Writing & Content",tags:["Free Tier"]},
-{name:"Writefull",url:"https://www.writefull.com",description:"Academic writing",category:"Writing & Content",tags:["Free Tier"]},
-{name:"Apollo",url:"https://apollo.io",description:"Sales intelligence",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"ChatPDF",url:"https://www.chatpdf.com",description:"Chat with PDFs",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Connected Papers",url:"https://www.connectedpapers.com",description:"Paper explorer",category:"Research & Analysis",tags:["Free Forever"]},
-{name:"Consensus",url:"https://consensus.app",description:"Scientific research",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Elicit",url:"https://elicit.com",description:"Research workflow",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Explain Paper",url:"https://www.explainpaper.com",description:"Paper explanations",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Gamma",url:"https://gamma.app",description:"AI presentations",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Humata AI",url:"https://www.humata.ai",description:"Document analysis",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Instantly AI",url:"https://instantly.ai",description:"Email outreach",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Julius AI",url:"https://julius.ai",description:"Data analysis",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Knowly AI",url:"https://knowly.ai",description:"Knowledge chatbots",category:"Research & Analysis",tags:["Free Tier"],new:true},
-{name:"Manus",url:"https://www.manus.ai",description:"Research assistant",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Napkin AI",url:"https://www.napkin.ai",description:"Text to diagrams",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"NotebookLM",url:"https://notebooklm.google.com",description:"AI research",category:"Research & Analysis",tags:["Free Forever"]},
-{name:"Perplexity AI",url:"https://www.perplexity.ai",description:"AI search",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Promptcraft",url:"https://promptcraft.ai",description:"Prompt engineering",category:"Research & Analysis",tags:["Free Tier"],new:true},
-{name:"Querri",url:"https://querri.ai",description:"Natural language SQL",category:"Research & Analysis",tags:["Free Tier"],new:true},
-{name:"ResearchRabbit",url:"https://researchrabbit.ai",description:"Literature discovery",category:"Research & Analysis",tags:["Free Forever"]},
-{name:"Scholarcy",url:"https://www.scholarcy.com",description:"Article summarization",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Scira AI",url:"https://scira.ai",description:"AI search with citations",category:"Research & Analysis",tags:["Free Forever"],new:true},
-{name:"SciSpace",url:"https://typeset.io",description:"Understand papers",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"scite.ai",url:"https://scite.ai",description:"Citation analysis",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Semantic Scholar",url:"https://www.semanticscholar.org",description:"Academic search",category:"Research & Analysis",tags:["Free Forever"]},
-{name:"Sequirly",url:"https://sequirly.ai",description:"SQL query builder",category:"Research & Analysis",tags:["Free Tier"],new:true},
-{name:"Thesys AI",url:"https://www.thesys.ai",description:"Research assistant",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Typeform",url:"https://www.typeform.com",description:"AI form builder",category:"Research & Analysis",tags:["Free Tier"]},
-{name:"Wolfram Alpha",url:"https://www.wolframalpha.com",description:"Computational knowledge",category:"Research & Analysis",tags:["Free Forever"]},
-{name:"Canva",url:"https://www.canva.com",description:"Design with AI",category:"Design & Creativity",tags:["Free Tier"]},
-{name:"Chronicle",url:"https://chronicle.app",description:"AI presentations",category:"Design & Creativity",tags:["Free Tier"],new:true},
-{name:"Fontjoy",url:"https://fontjoy.com",description:"Font pairing",category:"Design & Creativity",tags:["Free Forever"]},
-{name:"Khroma",url:"https://www.khroma.co",description:"Color palettes",category:"Design & Creativity",tags:["Free Forever"]},
-{name:"Vectorizer.AI",url:"https://vectorizer.ai",description:"Bitmap to SVG",category:"Design & Creativity",tags:["Free Tier"]},
-{name:"Beautiful.ai",url:"https://www.beautiful.ai",description:"Presentation maker",category:"Productivity & Business",tags:["Free Tier"]},
-{name:"Crystal",url:"https://www.crystalknows.com",description:"Personality insights",category:"Productivity & Business",tags:["Free Tier"],new:true},
-{name:"Dokie AI",url:"https://dokie.ai",description:"AI presentations",category:"Productivity & Business",tags:["Free Tier"],new:true},
-{name:"Fern",url:"https://fern.ai",description:"Meeting assistant",category:"Productivity & Business",tags:["Free Tier"],new:true},
-{name:"Fireflies.ai",url:"https://fireflies.ai",description:"Meeting assistant",category:"Productivity & Business",tags:["Free Tier"]},
-{name:"Genspark AI",url:"https://genspark.ai",description:"AI workspace",category:"Productivity & Business",tags:["Free Tier"],new:true},
-{name:"Happenstance",url:"https://happenstance.ai",description:"Network search",category:"Productivity & Business",tags:["Free Forever"],new:true},
-{name:"Notion AI",url:"https://www.notion.so/product/ai",description:"AI in workspace",category:"Productivity & Business",tags:["Free Tier"]},
-{name:"Slidescript",url:"https://slidescript.ai",description:"AI slide decks",category:"Productivity & Business",tags:["Free Tier"],new:true},
-{name:"Tldv",url:"https://tldv.io",description:"Meeting recorder",category:"Productivity & Business",tags:["Free Tier"]},
-{name:"Computer X",url:"https://computerx.ai",description:"Desktop automation",category:"AI Automation",tags:["Free Tier","Beta"],new:true},
-{name:"Flowstep",url:"https://flowstep.ai",description:"Workflow builder",category:"AI Automation",tags:["Free Tier"],new:true},
-{name:"Lindy AI",url:"https://lindy.ai",description:"AI executive assistant",category:"AI Automation",tags:["Free Tier"],new:true},
-{name:"Tanka",url:"https://tanka.ai",description:"AI messenger",category:"AI Automation",tags:["Free Tier"],new:true},
-{name:"Portals",url:"https://portals.ai",description:"Project management",category:"AI Project Management",tags:["Free Tier"],new:true},
-{name:"Huntr AI Resume",url:"https://huntr.co",description:"Resume builder",category:"AI Resume & Career",tags:["Free Tier"],new:true},
-{name:"Bubble Mobile",url:"https://bubble.io/mobile",description:"No-code mobile apps",category:"No-Code Builders",tags:["Free Tier","Beta"],new:true},
-{name:"Shipable AI",url:"https://shipable.ai",description:"Build AI agents",category:"No-Code Builders",tags:["Free Tier"],new:true},
-{name:"Emotion Sense Pro",url:"https://emotionsensepro.com",description:"Emotion detection",category:"AI Security & Privacy",tags:["Free Tier"],new:true},
-{name:"Oblitaratus",url:"https://oblitaratus.com",description:"Content anonymizer",category:"AI Security & Privacy",tags:["Free Tier"],new:true},
-{name:"AnswerThePublic",url:"https://answerthepublic.com",description:"Content ideas",category:"SEO & Marketing",tags:["Free Tier"]},
-{name:"Simplified",url:"https://simplified.com",description:"Marketing tools",category:"SEO & Marketing",tags:["Free Tier"]},
-{name:"Writesonic",url:"https://writesonic.com",description:"Content creation",category:"SEO & Marketing",tags:["Free Tier"]},
-{name:"DeepL",url:"https://www.deepl.com",description:"AI translation",category:"Translation & Language",tags:["Free Tier"]},
-{name:"Google Translate",url:"https://translate.google.com",description:"100+ languages",category:"Translation & Language",tags:["Free Forever"]},
-{name:"LibreTranslate",url:"https://libretranslate.com",description:"Open-source translation",category:"Translation & Language",tags:["Free Forever"]},
-{name:"Reverso",url:"https://www.reverso.net",description:"Translation with context",category:"Translation & Language",tags:["Free Tier"]},
-{name:"Adobe Enhanced Speech",url:"https://podcast.adobe.com/enhance",description:"Broadcast audio",category:"Utilities",tags:["Free Forever"]},
-{name:"TinyWow",url:"https://tinywow.com",description:"200+ AI utilities",category:"Utilities",tags:["Free Forever"]},
-{name:"Hugging Face",url:"https://huggingface.co",description:"AI models",category:"Open-Source Models",tags:["Free Forever"]},
-{name:"LM Studio",url:"https://lmstudio.ai",description:"Run LLMs locally",category:"Open-Source Models",tags:["Free Forever"]},
-{name:"Stable Diffusion WebUI",url:"https://github.com/AUTOMATIC1111/stable-diffusion-webui",description:"Image generation",category:"Open-Source Models",tags:["Free Forever"]},
-{name:"Text Generation WebUI",url:"https://github.com/oobabooga/text-generation-webui",description:"LLM interface",category:"Open-Source Models",tags:["Free Forever"]}
-];
-
-let currentFilter='all',currentSearch='',theme=localStorage.getItem('theme')||'light';
-
-document.addEventListener('DOMContentLoaded',()=>{
-    initTheme();
-    checkFirstVisit();
-    renderByCategory();
-    updateToolCount();
-    setupEventListeners();
-    lucide.createIcons();
-});
-
-function initTheme(){
-    document.body.setAttribute('data-theme',theme);
-    const icon=document.getElementById('themeIcon');
-    icon.setAttribute('data-lucide',theme==='light'?'moon':'sun');
-    lucide.createIcons();
-}
-
-function toggleTheme(){
-    theme=theme==='light'?'dark':'light';
-    localStorage.setItem('theme',theme);
-    document.body.setAttribute('data-theme',theme);
-    const icon=document.getElementById('themeIcon');
-    icon.setAttribute('data-lucide',theme==='light'?'moon':'sun');
-    lucide.createIcons();
-}
-
-function checkFirstVisit(){
-    const visited=localStorage.getItem('visited');
-    if(!visited){
-        document.getElementById('recentlyAdded').style.display='block';
-        renderRecentlyAdded();
-        localStorage.setItem('visited','true');
-        setTimeout(()=>{
-            document.getElementById('recentlyAdded').style.display='none';
-        },180000);
-    }
-}
-
-function renderByCategory(){
-    const container=document.getElementById('categoriesContainer');
-    const noResults=document.getElementById('noResults');
-    let filteredTools=tools;
+    <h1>🧪 PWA Installation Test</h1>
+    <p>This page will test if PWA can install on your site.</p>
+    <div id="results"></div>
     
-    if(currentFilter==='free-forever'){
-        filteredTools=tools.filter(t=>t.tags.includes('Free Forever'));
-    }
-    if(currentSearch){
-        const search=currentSearch.toLowerCase();
-        filteredTools=filteredTools.filter(t=>
-            t.name.toLowerCase().includes(search)||
-            t.description.toLowerCase().includes(search)||
-            t.category.toLowerCase().includes(search)
-        );
+    <script>
+    const results = document.getElementById('results');
+    
+    // Test 1: Service Worker Support
+    if('serviceWorker' in navigator){
+        results.innerHTML += '<div class="status success">✅ Service Worker supported</div>';
+        
+        // Register SW
+        navigator.serviceWorker.register('./sw-minimal.js')
+            .then(reg => {
+                results.innerHTML += '<div class="status success">✅ SW registered: ' + reg.scope + '</div>';
+            })
+            .catch(err => {
+                results.innerHTML += '<div class="status error">❌ SW failed: ' + err.message + '</div>';
+            });
+    } else {
+        results.innerHTML += '<div class="status error">❌ Service Worker not supported</div>';
     }
     
-    if(filteredTools.length===0){
-        container.innerHTML='';
-        noResults.style.display='block';
-        return;
-    }else{
-        noResults.style.display='none';
-    }
-    
-    const grouped={};
-    filteredTools.forEach(tool=>{
-        if(!grouped[tool.category])grouped[tool.category]=[];
-        grouped[tool.category].push(tool);
-    });
-    
-    container.innerHTML='';
-    Object.keys(grouped).sort().forEach(category=>{
-        const categoryTools=grouped[category];
-        const icon=iconMap[category]||'box';
-        const categoryHTML=`
-            <section class="category-section">
-                <div class="category-header">
-                    <span class="category-emoji"><i data-lucide="${icon}"></i></span>
-                    <h2 class="category-title">${category}<span class="category-count"> (${categoryTools.length})</span></h2>
-                </div>
-                <div class="tools-grid">
-                    ${categoryTools.map(tool=>createToolCard(tool)).join('')}
-                </div>
-            </section>
-        `;
-        container.insertAdjacentHTML('beforeend',categoryHTML);
-    });
-    
-    lucide.createIcons();
-}
-
-function renderRecentlyAdded(){
-    const grid=document.getElementById('recentGrid');
-    const recentTools=tools.filter(t=>t.new).slice(0,8);
-    if(recentTools.length===0){
-        document.getElementById('recentlyAdded').style.display='none';
-        return;
-    }
-    grid.innerHTML='';
-    recentTools.forEach(tool=>{
-        grid.innerHTML+=createToolCard(tool);
-    });
-    lucide.createIcons();
-}
-
-function createToolCard(tool){
-    const icon=iconMap[tool.category]||'box';
-    const badges=tool.tags.map(tag=>{
-        let badgeClass='badge-free';
-        if(tag.includes('Forever'))badgeClass='badge-free';
-        else if(tag.includes('Tier'))badgeClass='badge-freemium';
-        else if(tag.includes('Beta'))badgeClass='badge-beta';
-        return`<span class="badge ${badgeClass}">${tag}</span>`;
-    }).join(' ');
-    const newBadge=tool.new?'<span class="badge badge-new">New</span>':'';
-    return`
-        <div class="tool-card">
-            <div class="card-header">
-                <div class="card-emoji"><i data-lucide="${icon}"></i></div>
-                ${newBadge}
-            </div>
-            <h3 class="card-title">
-                <a href="${tool.url}" target="_blank" rel="noopener">${tool.name}</a>
-            </h3>
-            <p class="card-description">${tool.description}</p>
-            <div class="card-badges">${badges}</div>
-            <a href="${tool.url}" target="_blank" rel="noopener" class="card-button">Visit Tool →</a>
-        </div>
-    `;
-}
-
-function updateToolCount(){
-    document.getElementById('toolCount').textContent=tools.length;
-}
-
-function setupEventListeners(){
-    document.getElementById('themeToggle').addEventListener('click',toggleTheme);
-    document.getElementById('searchInput').addEventListener('input',e=>{
-        currentSearch=e.target.value;
-        renderByCategory();
-    });
-    document.querySelectorAll('.filter-btn').forEach(btn=>{
-        btn.addEventListener('click',e=>{
-            document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-            e.currentTarget.classList.add('active');
-            currentFilter=e.currentTarget.dataset.category;
-            renderByCategory();
+    // Test 2: Manifest
+    fetch('./manifest.json')
+        .then(r => {
+            if(r.ok) return r.json();
+            throw new Error('Manifest not found');
+        })
+        .then(data => {
+            results.innerHTML += '<div class="status success">✅ Manifest loaded: ' + data.name + '</div>';
+        })
+        .catch(err => {
+            results.innerHTML += '<div class="status error">❌ Manifest error: ' + err.message + '</div>';
         });
+    
+    // Test 3: Install prompt
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        results.innerHTML += '<div class="status success">✅ Install prompt ready!</div>';
+        
+        // Show install button
+        const btn = document.createElement('button');
+        btn.textContent = '📲 Install App';
+        btn.style = 'background:#667eea;color:white;border:none;padding:15px 30px;border-radius:8px;font-size:16px;cursor:pointer;margin-top:20px;';
+        btn.onclick = () => {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    results.innerHTML += '<div class="status success">✅ User accepted install!</div>';
+                }
+                deferredPrompt = null;
+            });
+        };
+        document.body.appendChild(btn);
     });
-    const backToTop=document.getElementById('backToTop');
-    window.addEventListener('scroll',()=>{
-        backToTop.classList.toggle('show',window.scrollY>300);
-    });
-    backToTop.addEventListener('click',()=>{
-        window.scrollTo({top:0,behavior:'smooth'});
-    });
-}
-</script>
-<script>
-if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(reg => console.log('[SW] Registered:', reg.scope))
-          .catch(err => console.log('[SW] Registration failed:', err));
-      });
+    
+    // Test 4: HTTPS check
+    if(location.protocol === 'https:'){
+        results.innerHTML += '<div class="status success">✅ HTTPS enabled</div>';
+    } else {
+        results.innerHTML += '<div class="status error">❌ HTTPS required for PWA</div>';
     }
-</script>
+    
+    setTimeout(() => {
+        if(!deferredPrompt){
+            results.innerHTML += '<div class="status error">⚠️ Install prompt not triggered. Check DevTools console.</div>';
+        }
+    }, 3000);
+    </script>
 </body>
 </html>
