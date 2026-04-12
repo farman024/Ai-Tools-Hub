@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Tools Hub - 139 Free AI Tools Directory</title>
     <meta name="description" content="Discover 139+ free AI tools across 19 categories">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <link rel="icon" href="/icon.svg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AI Tools Hub">
+    <link rel="apple-touch-icon" href="/icon.svg">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -445,6 +451,13 @@ function setupEventListeners(){
     backToTop.addEventListener('click',()=>{
         window.scrollTo({top:0,behavior:'smooth'});
     });
+}
+</script>
+<script>
+if('serviceWorker'in navigator){
+navigator.serviceWorker.register('./service-worker.js',{scope:'./'})
+.then(reg=>console.log('✅ SW registered:',reg.scope))
+.catch(err=>console.log('❌ SW failed:',err));
 }
 </script>
 </body>

@@ -1,9 +1,9 @@
 const CACHE_NAME='ai-tools-hub-v1';
 const urlsToCache=[
-'/',
-'/index.html',
-'/manifest.json',
-'/icon.svg',
+'./',
+'./index.html',
+'./manifest.json',
+'./icon.svg',
 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js'
 ];
 
